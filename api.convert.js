@@ -1,0 +1,1 @@
+let requestURL = "https://api.exchangerate.host/latest?base=USD";

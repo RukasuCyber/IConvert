@@ -1,57 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../asset/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <title>IConvert</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../asset/style.css">
+  <title>IConvert</title>
 </head>
-
 <body>
-    <div class="background">
-        <header>
-            <div class="logocontainer">
-                <h3 class="logo">IC</h3>
-            </div>
-            <div class="comptecontainer">
-                <div onclick=toggleMenu() class="compte"><i class="fa-solid fa-user"></i></div>
-
-                <div class="comptepage">
-                    <ul class="menu" id="menu">
-                        <li><button class="seco">Se connecter</button></li>
-                        <li><button class="noco">Nouveau compte</button></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-        <div class="titlecontainer">
-            <h1 class="title">IConvert</h1>
-
-        </div>
-        <div class="subtitlecontainer">
-            <h2 class="subtitle">Convertisseur de devises <span class="spanIC">IC</span></h2>
-        </div>
-        <section class="boxs">
-            <div class="box">
-                <input class="money1" type="text" value="Euro">
-                <input class="amount" type="number" id="input-eurgbp" step="0.0001" value="1" />
-            </div>
-            <button onclick="change()" class="inverse">
-                <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            </button>
-            <div class="box2">
-                <input class="money2" type="text" value="GBP">
-                <input class="convertresult" type="number" id="input-gbpeur" step="0.0001" >
-            </div>
-        </section>
-        <div id="time" class="time"></div>
-        <script src="myscript.js"></script>
-        
+  <div class="container">
+    <h2 class="heading">IConvert</h2>
+    <div class="rate">
+      <div class="rate1"></div>
+      <div class="rate2"></div>
     </div>
+    <div class="main">
+      <div class="initial">
+        <div class="option"><select></select></div>
+        <div class="input"><input type="number"></div>
+      </div>
+      <span class="material-icons swap" style="font-size: 36px;">
+        swap_horiz
+      </span>
+      <div class="target">
+        <div class="option"><select></select></div>
+        <div class="input"><input disabled type="number"></div>
+      </div>
+    </div>
+    <button class="result">Result</button>
+  </div>
+  <script src="../convert.js"></script>
+  
 </body>
-
 </html>
