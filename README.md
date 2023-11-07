@@ -1,7 +1,15 @@
 # IConvert
 
-Ce projet et un convertisseur de devises
+This project is a currency converter
 
-Ce projet a pour but de convertire differente monnaie du monde
+This project aims to convert different world currencies
 
-version: 0.1.0
+version: 1.0.0
+
+## Installation
+
+### Clones the project:
+
+Open your git bash terminal in the desired folder and type:
+    
+    git clone https://github.com/RukasuCyber/IConvert.git
