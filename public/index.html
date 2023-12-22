@@ -3,33 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../images/logo.png" rel="icon" sizes="32X32">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../asset/style.css">
   <title>IConvert</title>
 </head>
 <body>
-  <div class="container">
-    <h2 class="heading">IConvert</h2>
-    <div class="rate">
-      <div class="rate1"></div>
-      <div class="rate2"></div>
+<img alt="logo" class="logo" src="../images/logo.png">
+<button class="User" id="button">
+  <img class="user_logo" alt="User" src="../images/userLogo.svg">
+</button>
+<div class="container-convert">
+  <h2 class="heading">IConvert</h2>
+  <!--<div class="rate">
+    <div class="rate1"></div>
+    <div class="rate2"></div>
+  </div> -->
+  <div class="main">
+    <div class="initial">
+      <label class="option" for="select1"></label>
+      <select id="select1">
+        <option value="choix1">Euro</option>
+        <option value="choix2">Dollars</option>
+        <option value="choix3">Livre</option>
+        <option value="choix4">Yens</option>
+      </select>
+      <div class="input"><input class="input1" type="number"></div>
     </div>
-    <div class="main">
-      <div class="initial">
-        <div class="option"><select></select></div>
-        <div class="input"><input type="number"></div>
-      </div>
-      <span class="material-icons swap" style="font-size: 36px;">
+    <span class="material-icons swap" style="font-size: 36px;">
         swap_horiz
       </span>
-      <div class="target">
-        <div class="option"><select></select></div>
-        <div class="input"><input disabled type="number"></div>
-      </div>
+    <div class="target">
+      <label class="option" for="select2"></label>
+        <select id="select2">
+          <option value="choix1">Livre</option>
+          <option value="choix2">Yens</option>
+          <option value="choix3">Dollars</option>
+          <option value="choix4">Euro</option>
+        </select>
+      <div class="input"><input class="input2" disabled type="number"></div>
     </div>
-    <button class="result">Result</button>
   </div>
-  <script src="../convert.js"></script>
+  <button class="result">Result</button>
+</div>
+
+  <!-- Modal -->
+  <div class="modal all-modal fade" id="modal">
+    <div class="modal-size">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:15px 25px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-size" style="padding:25px 25px;">
+          <form role="form">
+            <div class="form-login">
+              <label for="usrname">Username</label>
+              <input type="text" class="input-login" id="usrname" placeholder="Enter username">
+            </div>
+            <div class="form-login">
+              <label for="psw">Password</label>
+              <input type="text" class="input-login" id="psw" placeholder="Enter password">
+            </div>
+            <button class="btnLogin" id="login">Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+        </div>
+      </div>
+      <!-- End Modal content-->
+    </div>
+  </div>
+<!-- End Modal -->
+<script src="../convert.js"></script>
   
 </body>
 </html>

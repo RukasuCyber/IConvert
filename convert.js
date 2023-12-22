@@ -2,15 +2,15 @@ let rate1 = document.querySelector(".rate1");
 let rate2 = document.querySelector(".rate2");
 let resultBtn = document.querySelector(".result");
 let selects = document.querySelectorAll(".option select");
-let sel1 = selects[0];
-let sel2 = selects[1];
+let sel1 = document.getElementById("select1");
+let sel2 = document.getElementById("select2");
 let inputs = document.querySelectorAll(".input input");
-let inpt1 = inputs[0];
-let inpt2 = inputs[1];
+let inpt1 = document.querySelector(".input1");
+let inpt2 = document.querySelector(".input2");
 
 let rates = {};
 
-let requestURL = "https://api.exchangerate.host/latest?base=USD";
+
 
 fetchRates();
 
@@ -62,6 +62,7 @@ resultBtn.addEventListener("click", () => {
 selects.forEach(s=>s.addEventListener("change", displayRate));
 
 document.querySelector(".swap").addEventListener("click", ()=>{
+  console.log(inpt1.value)
   let in1 = inpt1.value;
   let in2 = inpt2.value;
   let op1 = sel1.value;
@@ -76,3 +77,15 @@ document.querySelector(".swap").addEventListener("click", ()=>{
   displayRate();
 });
 
+const button = document.querySelector("button");
+const login = document.querySelector("#login");
+
+login.addEventListener("click", (event) => {
+  login.textContent = `Click count: ${event.detail}`;
+});
+
+$(document).ready(function(){
+  $("#button").click(function(){
+    $("#modal").modal();
+  });
+});

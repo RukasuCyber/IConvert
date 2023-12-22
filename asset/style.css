@@ -10,10 +10,10 @@ body{
   user-select: none;
 }
 
-.container{
+.container-convert{
   background-color: white;
-  width: 470px;
-  height: 360px;
+  width: 500px;
+  height: 400px;
   padding: 70px;
   box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
   border-radius: 5px;
@@ -21,16 +21,17 @@ body{
 }
 
 .heading{
+  margin-top: -20px;
   color: #383838;
   text-align: center;
   text-transform: uppercase;
-  font-size: 2.8rem;
+  font-size: 4rem;
   font-family: "audiowide";
   border-radius: 25px;
 }
 
 .rate{
-  margin-top: -1.5rem;
+  margin-top: 3.5rem;
 }
 
 .rate1{
@@ -46,7 +47,16 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 3.5rem;
+  font-family: initial;
+  width: 100%;
+}
+
+select{
+  width: 105%;
+  height: 30px;
+  font-family: "Calibri";
+  font-size: 20px;
 }
 
 .swap{
@@ -64,7 +74,7 @@ body{
   all: unset;
   display: inline-block;
   margin-top: 1rem;
-  width: 175px;
+  width: 105%;
   height: 48px;
   padding: 5px;
   background-color: #ebebeb;
@@ -91,6 +101,8 @@ body{
   outline: none;
   border: none;
   border-radius: 5px;
+  font-family: "Calibri";
+  font-size: 20px;
 }
 
 .result:active{
@@ -98,4 +110,78 @@ body{
   background-color: rgb(255, 255, 255);
   color:#383838;
   border: 2px solid #383838;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.User{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #848484;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+
+.user_logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.modal-header, h4, .close {
+  background-color: #383838;
+  color:white !important;
+  text-align: center;
+  font-size: 30px;
+}
+.modal-footer {
+  background-color: #f9f9f9;
+}
+
+.modal-size{
+  width: 800px;
+  height: 400px;
+  border-radius: 15px;
+}
+
+.btnLogin{
+  margin-left: 100px;
+  margin-top: 50px;
+  color: white;
+  height: 50px;
+  width: 70%;
+  background-color: #383838;
+  border-radius: 5px;
+}
+
+.form-login{
+  margin-top: 50px;
+  height: 50px;
+}
+
+.input-login{
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border-color: #ebebeb;
+}
+
+.all-modal{
+  border-radius: 15px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
 }
