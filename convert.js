@@ -83,6 +83,6 @@ function result() {
   if (!isNaN(input1)) {
     document.getElementById("input2").value = (input1 * 0.87).toString(10) ;
   } else {
-    alert("Veuillez remplir un seul champ");
+    alert("Veuillez remplir le montant a comparer");
   }
 }

@@ -161,6 +161,9 @@ select{
   width: 800px;
   height: 400px;
   border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: calc(50% - 800px);
 }
 
 .btnLogin{
@@ -187,9 +190,6 @@ select{
 
 .all-modal{
   border-radius: 15px;
-  position: absolute;
-  top: 20%;
-  left: 30%;
 }
 
 .box2{
