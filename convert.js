@@ -73,10 +73,14 @@ $(document).ready(function(){
   function checkForm() {
     var username = $("#username").val();
     var password = $("#psw").val();
+    var loginButton = $("#login");
+
     if (username.length > 0 && password.length >= 8) {
-      $("#login").prop('disabled', false);
+      loginButton.prop('disabled', false);
+      loginButton.removeClass("disabled-style");
     } else {
-      $("#login").prop('disabled', true);
+      loginButton.prop('disabled', true);
+      loginButton.addClass("disabled-style");
     }
   }
   $("#username").on('input', function(){
@@ -86,6 +90,8 @@ $(document).ready(function(){
     checkForm();
   });
 });
+
+
 
 // calcule euro --> livre
 function result() {

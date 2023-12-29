@@ -330,3 +330,8 @@ select{
   }
 }
 
+.disabled-style {
+  background-color: #ddd;
+  color: #666;
+}
+
