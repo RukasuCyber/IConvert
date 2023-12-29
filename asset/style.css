@@ -74,7 +74,7 @@ select{
   width: 75px;
 }
 
-.input input{
+.input1{
   all: unset;
   display: inline-block;
   margin-top: 1rem;
@@ -91,6 +91,26 @@ select{
   appearance: textfield;
   caret-color: transparent;
   font-family: "Calibri";
+}
+
+.input2{
+  all: unset;
+  display: inline-block;
+  margin-top: 1rem;
+  width: 105%;
+  height: 48px;
+  padding: 5px;
+  background-color: #ebebeb;
+  font-size: 2.5rem;
+  color: black;
+  border: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  appearance: textfield;
+  caret-color: transparent;
+  font-family: "Calibri";
+  text-align: end;
 }
 
 .target{
@@ -251,10 +271,62 @@ select{
 
 
 .info {
+  width: 25px;
+  height: 25px;
+}
+
+.info-container {
   position: absolute;
   right: 30px;
   top: 295px;
   width: 25px;
   height: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: "Calibri";
+  font-size: 20px;
+}
+
+.tooltip-link {
+  cursor: help;
+  position: relative;
+  text-decoration: underline;
+}
+
+.tooltip-link:hover::after {
+  position: absolute;
+  opacity: 0;
+  content: attr(data-tooltip);
+  bottom: 0%;
+  animation: fadeIn 100ms cubic-bezier(0.42, 0, 0.62, 1.32) forwards;
+  left: 50%;
+  animation-delay: 100ms;
+  color: #ff0000;
+  background: #ffffff;
+  border-radius: 20px;
+  min-width: 200px;
+  max-width: 100%;
+  font-weight: 700;
+  text-transform: none;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  box-shadow: 0px 10px 33px #3333332e;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+    transform: translate(-50%, 50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -30px);
+  }
 }
 

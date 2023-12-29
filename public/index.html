@@ -74,9 +74,11 @@
             <div class="form-login">
               <label for="psw">Password</label>
               <input type="text" class="input-login" id="psw" placeholder="Enter password">
-              <img alt="info" src="../images/information.png" class="info">
+              <div class="info-container">
+                <div><span class="tooltip-link" data-tooltip="Entrez un mot de passe d'au moins 8 caractères."><img alt="info" src="../images/information.png" class="info"></span></div>
+              </div>
             </div>
-            <button class="btnLogin" onclick="displayValue()" id="login">Login</button>
+            <button class="btnLogin" disabled onclick="displayValue()" id="login">Login</button>
           </form>
         </div>
         <div class="modal-footer">

@@ -38,9 +38,14 @@ document.querySelector(".swap").addEventListener("click", ()=>{
 
 
 //plus d'info convertion
-/*document.querySelector("#result").addEventListener("click",function() {
-  document.querySelector("#box2").classList.toggle("show");
-});*/
+document.querySelector("#result").addEventListener("click",function() {
+  let input1 = parseFloat(document.getElementById("input1")?.value);
+  if (!isNaN(input1)) {
+    document.querySelector("#box2").classList.toggle("show");
+  } else {
+
+  }
+});
 
 //ouvrir modal
 $(document).ready(function(){
@@ -63,18 +68,26 @@ function displayValue(username) {
   document.querySelector("#pseudo").textContent = username
 }
 
-//condition password
+//condition password et login
 $(document).ready(function(){
-  $("#psw").on('input', function(){
-    if ($(this).val().length >= 8) {
+  function checkForm() {
+    var username = $("#username").val();
+    var password = $("#psw").val();
+    if (username.length > 0 && password.length >= 8) {
       $("#login").prop('disabled', false);
     } else {
       $("#login").prop('disabled', true);
     }
+  }
+  $("#username").on('input', function(){
+    checkForm();
+  });
+  $("#psw").on('input', function(){
+    checkForm();
   });
 });
 
-
+// calcule euro --> livre
 function result() {
   let input1 = parseFloat(document.getElementById("input1")?.value);
   let input2 = parseFloat(document.getElementById("input2")?.value);
