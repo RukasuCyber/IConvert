@@ -7,60 +7,19 @@ let sel2 = document.getElementById("select2");
 let inputs = document.querySelectorAll(".input input");
 let inpt1 = document.querySelector(".input1");
 let inpt2 = document.querySelector(".input2");
+let username
 
-let rates = {};
-
-
-
-fetchRates();
-
-async function fetchRates() {
-  let res = await fetch(requestURL);
-  res = await res.json();
-  rates = res.rates;
-  populateOptions();
-}
-
-function populateOptions(){
-  let val = "";
-  Object.keys(rates).forEach(code => {
-    let str = `<option value="${code}">${code}</option>`;
-    val += str;
-  });
-  selects.forEach((s) => (s.innertHTML = val));
-}
-
-function convert(val, fromCurr, toCurr){
-  let v = (val/rates[fromCurr]) * rates[toCurr]; 
-  let v1 = v.toFixed(3);
-  return v1 == 0.0 ? v.toFixed(5) : v1;
-}
-
-function displayRate(){
-  let v1 = sel1.value;
-  let v2 = sel2.value;
-
-  let val = convert(1, v1, v2);
-
-  rate1.innerHTML = `1 ${v1} equals`;
-  rate2.innerHTML = `${val} ${v2}`;
-}
-
-resultBtn.addEventListener("click", () => {
+/*resultBtn.addEventListener("click", () => {
   let fromCurr = sel1.value;
-  let fromVal = parseFloat(input1.value);
+  let fromVal = parseFloat(inpt1.value);
   let toCurr = sel2.value;
 
-  if(isNaN(fromVal)){
-    alert("entrer un nombre");
-  } else {
-    let cval = convert(fromVal, fromCurr, toCurr);
-    inpt2.value = cval;
-  }
-});
+});*/
 
 selects.forEach(s=>s.addEventListener("change", displayRate));
 
+
+// inverser les deux valeur
 document.querySelector(".swap").addEventListener("click", ()=>{
   console.log(inpt1.value)
   let in1 = inpt1.value;
@@ -77,15 +36,53 @@ document.querySelector(".swap").addEventListener("click", ()=>{
   displayRate();
 });
 
-const button = document.querySelector("button");
-const login = document.querySelector("#login");
 
-login.addEventListener("click", (event) => {
-  login.textContent = `Click count: ${event.detail}`;
-});
+//plus d'info convertion
+/*document.querySelector("#result").addEventListener("click",function() {
+  document.querySelector("#box2").classList.toggle("show");
+});*/
 
+//ouvrir modal
 $(document).ready(function(){
   $("#button").click(function(){
     $("#modal").modal();
   });
 });
+
+//close modal
+document.querySelector("#form").addEventListener("submit", function (event){
+  event.preventDefault()
+  username = event.target[0].value
+  displayValue(username)
+  $("#modal").modal('hide');
+})
+
+
+//login sur la page
+function displayValue(username) {
+  document.querySelector("#pseudo").textContent = username
+}
+
+//condition password
+$(document).ready(function(){
+  $("#psw").on('input', function(){
+    if ($(this).val().length >= 8) {
+      $("#login").prop('disabled', false);
+    } else {
+      $("#login").prop('disabled', true);
+    }
+  });
+});
+
+
+function result() {
+  let input1 = parseFloat(document.getElementById("input1")?.value);
+  let input2 = parseFloat(document.getElementById("input2")?.value);
+  console.log(input1)
+  console.log(input2)
+  if (!isNaN(input1)) {
+    document.getElementById("input2").value = (input1 * 0.87).toString(10) ;
+  } else {
+    alert("Veuillez remplir un seul champ");
+  }
+}

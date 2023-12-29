@@ -13,6 +13,7 @@
 </head>
 <body>
 <img alt="logo" class="logo" src="../images/logo.png">
+<div class="pseudo" id="pseudo"></div>
 <button class="User" id="button">
   <img class="user_logo" alt="User" src="../images/userLogo.svg">
 </button>
@@ -31,7 +32,7 @@
         <option value="choix3">Livre</option>
         <option value="choix4">Yens</option>
       </select>
-      <div class="input"><input class="input1" type="number"></div>
+      <div class="input"><input class="input1" id="input1" type="number"></div>
     </div>
     <span class="material-icons swap" style="font-size: 36px;">
         swap_horiz
@@ -44,10 +45,15 @@
           <option value="choix3">Dollars</option>
           <option value="choix4">Euro</option>
         </select>
-      <div class="input"><input class="input2" disabled type="number"></div>
+      <div class="input"><input class="input2" id="input2" disabled type="number"></div>
     </div>
   </div>
-  <button class="result">Result</button>
+  <button class="result" onclick="result()" id="result">Result</button>
+</div>
+<div class="box2"  id="box2">
+  <h3 class="titlebox2">Taux de change</h3>
+  <p class="tauxDeChange">1 EUR = 0.8635 GBP</p>
+  <img class="test" alt="test" src="../images/test.png">
 </div>
 
   <!-- Modal -->
@@ -60,16 +66,17 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
         </div>
         <div class="modal-size" style="padding:25px 25px;">
-          <form role="form">
+          <form role="form" id="form">
             <div class="form-login">
-              <label for="usrname">Username</label>
-              <input type="text" class="input-login" id="usrname" placeholder="Enter username">
+              <label for="username">Username</label>
+              <input type="text" class="input-login" id="username" placeholder="Enter username" value="">
             </div>
             <div class="form-login">
               <label for="psw">Password</label>
               <input type="text" class="input-login" id="psw" placeholder="Enter password">
+              <img alt="info" src="../images/information.png" class="info">
             </div>
-            <button class="btnLogin" id="login">Login</button>
+            <button class="btnLogin" onclick="displayValue()" id="login">Login</button>
           </form>
         </div>
         <div class="modal-footer">
