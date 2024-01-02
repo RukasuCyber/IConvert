@@ -91,6 +91,29 @@ $(document).ready(function(){
   });
 });
 
+//deconnection
+$(document).ready(function(){
+  $("#button").click(function(){
+    $("#modal").modal();
+  });
+
+  $("#form").submit(function(event){
+    event.preventDefault();
+    var username = $("#username").val();
+    displayValue(username);
+
+    $(".modal-title").text("Logout");
+    $("#login").text("Logout");
+    $("#login").addClass("logout");
+    $("#username").prop('disabled', true);
+    $("#psw").prop('disabled', true);
+    $(".tooltip-link").remove();
+    $("#login").off("click").on("click", function() {
+      history.go(0)
+    });
+  });
+});
+
 
 
 // calcule euro --> livre

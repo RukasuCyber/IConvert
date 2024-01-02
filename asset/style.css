@@ -273,12 +273,13 @@ select{
 .info {
   width: 25px;
   height: 25px;
+  pointer-events: none;
 }
 
 .info-container {
   position: absolute;
   right: 30px;
-  top: 295px;
+  top: 280px;
   width: 25px;
   height: 25px;
   display: flex;
@@ -333,5 +334,11 @@ select{
 .disabled-style {
   background-color: #ddd;
   color: #666;
+}
+
+.logout {
+  background-color: #c9302c;
+  color: #ffff;
+  border-color: #d43f3a;
 }
 
